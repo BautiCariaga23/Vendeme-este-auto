@@ -23,8 +23,4 @@ export default async function Results(props: Props) {
     const isright = props.searchParams.pass == datapass
     const dataname = datab.find(x=> x.user == props.searchParams.user) != undefined ? datab.find(x=> x.user == props.searchParams.user).name : ''
     isright ? redirect(`/access?usr=${props.searchParams.user}&p=${props.searchParams.pass}&dp=${datapass}&nm=${dataname}&ver=${datab.find(x=> x.user == props.searchParams.user).verified}`) : redirect("/login?err=2")
-  return (
-    <main className='grid h-screen place-items-center text-white text-center'>
-    </main>
-  )
 }

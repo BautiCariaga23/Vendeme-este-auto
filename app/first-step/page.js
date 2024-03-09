@@ -17,7 +17,7 @@ export default function Page() {
 
   
   return (
-    <>
+    <div>
       <NavBar></NavBar>
     <div className='pb-4 grid mt-8 sm:ml-36 place-items-center min-h-screen h-full bg-white'>
       <h1 className="text-3xl text-center font-extralight mb-12 mt-10">1. Crea la publicación!</h1>
@@ -111,6 +111,6 @@ export default function Page() {
     }}>ENVIAR</button>
     </div>
     </div></div>
-    </>
+    </div>
   )
 }

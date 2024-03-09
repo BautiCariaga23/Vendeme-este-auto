@@ -20,8 +20,4 @@ export default async function Results(props: Props) {
     })
     datab.find(x=> x.user == props.searchParams.user) != undefined ? redirect("/register?err=1") :  await mongoClient.db().collection('Users').insertOne({user:`${props.searchParams.user}`,pass:`${props.searchParams.pass}`, id: `${Math.floor(Math.random()*999999)}`, name: `${props.searchParams.name}`, verified: false})
     redirect(`/login`)
-  return (
-    <main className='grid h-screen place-items-center text-white text-center'>
-    </main>
-  )
 }

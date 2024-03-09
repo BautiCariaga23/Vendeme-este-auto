@@ -5,6 +5,7 @@ export default function Home() {
   
 
   return (
+    <Suspense>
     <main className="text-black flex min-h-screen flex-col items-center p-24 px-16 bg-white">
       <div className = "relative z-90">
       <NavBar />
@@ -16,5 +17,6 @@ export default function Home() {
       </div>
       </div>
     </main>
+    </Suspense>
   );
 }

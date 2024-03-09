@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import easyNumberSeparator from '../easy-number-separator'
 import { useRouter } from 'next/navigation'
 import { UploadButton } from '../../utils/uploadthing'
@@ -14,7 +14,6 @@ export default function Page() {
     const [city, setCity] = useState("C.A.B.A")
     const [img, setImg] = useState()
     const {push} = useRouter()
-
   
   return (
     <div>

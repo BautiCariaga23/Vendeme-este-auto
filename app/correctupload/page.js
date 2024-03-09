@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import NavBar from "../../components/NavBar"
 export default function Page() {
   return (
+    <Suspense>
     <main>
         <NavBar></NavBar>
         <div className='grid place-items-center ml-36 min-h-screen bg-gray-100'>
@@ -11,5 +12,6 @@ export default function Page() {
         </div>
         </div>
     </main>
+    </Suspense>
   )
 }

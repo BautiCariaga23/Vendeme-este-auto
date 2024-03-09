@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import NavBar from "../components/NavBar"
 import Cars from "../components/Cars"
 export default function Home() {

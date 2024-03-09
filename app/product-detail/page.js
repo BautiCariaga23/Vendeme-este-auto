@@ -3,7 +3,7 @@ import React from 'react'
 import NavBar from '../../components/NavBar'
 import { useSearchParams } from 'next/navigation'
 
-export default function page() {
+export default function Page() {
 
     const data = useSearchParams()
   return (

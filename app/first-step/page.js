@@ -4,7 +4,7 @@ import easyNumberSeparator from '../easy-number-separator'
 import { useRouter } from 'next/navigation'
 import { UploadButton } from '../../utils/uploadthing'
 import NavBar from "../../components/NavBar"
-export default function SecondStep() {
+export default function Page() {
     const [title, setTitle] = useState("Alfa Romeo")
     const [model, setModel] = useState("")
     const [desc, setDesc] = useState("")

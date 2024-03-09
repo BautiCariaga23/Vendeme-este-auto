@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function page() {
+export default function Page() {
   const data = useSearchParams()
   return (
     <div className='min-h-screen bg-gray-100 w-full overflow-hidden'>

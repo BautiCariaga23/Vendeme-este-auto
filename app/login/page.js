@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import NavBar from '../../components/NavBar'
 import Link from 'next/link'
 
-export default function page() {
+export default function Page() {
     const [email, setemail] = useState("")
     const [pass, setPassword] = useState("")
     const {push} = useRouter()

@@ -1,9 +1,9 @@
 "use client"
+import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
-import React from 'react'
 
-export default function page() {
+export default function Page() {
     const {push} = useRouter()
     const data = useSearchParams()
     if(data.get("usr") != null && data.get("p") == data.get("dp")){

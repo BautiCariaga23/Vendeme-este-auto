@@ -7,7 +7,7 @@ type Props = {
     searchParams: {[key:string]: string | string[] | undefined},
 }
 
-export default function page(props: Props) {
+export default function Page(props: Props) {
   return (
     <main className="text-black flex min-h-screen flex-col items-center p-24 px-16 bg-white">
     <div className = "relative z-90">

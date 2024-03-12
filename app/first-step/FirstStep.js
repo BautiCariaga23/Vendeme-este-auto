@@ -31,7 +31,7 @@ export default function FirstStep() {
     }}
     onUploadError={(err) => {
       // Do something with the error.
-      alert(`ERROR! ${error.message}`);
+      alert(`ERROR! ${err.message}`);
     }}
   />
   </div>

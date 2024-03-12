@@ -2,8 +2,8 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import easyNumberSeparator from '../easy-number-separator'
 import { useRouter } from 'next/navigation'
-import { UploadButton } from '../../utils/uploadthing'
 import NavBar from "../../components/NavBar"
+import { UploadButton } from '../../utils/uploadthing'
 export default function FirstStep() {
     const [title, setTitle] = useState("Alfa Romeo")
     const [model, setModel] = useState("")

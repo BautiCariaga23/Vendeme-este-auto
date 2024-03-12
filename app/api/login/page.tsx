@@ -22,5 +22,5 @@ export default async function Results(props: Props) {
     const datapass = datab.find(x=> x.user == props.searchParams.user) != undefined ? datab.find(x=> x.user == props.searchParams.user).pass : ''
     const isright = props.searchParams.pass == datapass
     const dataname = datab.find(x=> x.user == props.searchParams.user) != undefined ? datab.find(x=> x.user == props.searchParams.user).name : ''
-    isright ? redirect(`/access?usr=${props.searchParams.user}&p=${props.searchParams.pass}&dp=${datapass}&nm=${dataname}&ver=${datab.find(x=> x.user == props.searchParams.user).verified}`) : redirect("/login?err=2")
+    isright ? redirect(`/access?usr=${props.searchParams.user}&p=${props.searchParams.pass}&dp=${datapass}&nm=${dataname}&ver=${datab.find(x=> x.user == props.searchParams.user).verified}&phone=${datab.find(x=> x.user == props.searchParams.user).phone}`) : redirect("/login?err=2")
 }

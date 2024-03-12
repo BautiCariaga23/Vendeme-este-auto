@@ -38,7 +38,7 @@ export default async function Cars(props) {
   return (
     <div className='w-full flex gap-4 m-0 flex-wrap sm:justify-start'>
         {arrSort.map((e,i)=>{
-            return <CardCar key = {i} title = {e.title} desc = {e.desc} model = {e.model} ver = {e.ver} price = {e.price} img = {e.img} user = {e.user} lvl = {e.lvl} city = {e.city} year = {e.year} km = {e.km}/>
+            return <CardCar key = {i} phone = {e.phone} title = {e.title} desc = {e.desc} model = {e.model} ver = {e.ver} price = {e.price} img = {e.img} user = {e.user} lvl = {e.lvl} city = {e.city} year = {e.year} km = {e.km}/>
         })}
 
     </div>

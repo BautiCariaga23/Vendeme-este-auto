@@ -22,8 +22,8 @@ export default async function Cars(props) {
     })
 
     let arrSort = approvedC.sort((a,b) => b.lvl - a.lvl)
-    if(props.search != null){
-        arrSort = arrSort.filter((a) => a.title.toUpperCase().includes(props.search.toUpperCase()))
+    if(props.search != undefined && props.search != ""){
+        arrSort = arrSort.filter((a) => a.model.toUpperCase().includes(props.search.toUpperCase()))
     }
     if(props.min != "" && props.min != undefined){
         arrSort = arrSort.filter((a) => parseInt(a.price.replaceAll(".", "")) >= parseInt(props.min.replaceAll(".","")))

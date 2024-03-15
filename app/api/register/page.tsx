@@ -18,6 +18,6 @@ export default async function Results(props: Props) {
     }).catch(()=>{
         console.log("error")
     })
-    datab.find(x=> x.user == props.searchParams.user) != undefined ? redirect("/register?err=1") :  await mongoClient.db().collection('Users').insertOne({user:`${props.searchParams.user}`,pass:`${props.searchParams.pass}`, id: `${Math.floor(Math.random()*999999)}`, name: `${props.searchParams.name}`, verified: false, phone:`${props.searchParams.phone}`})
+    datab.find(x=> x.user == props.searchParams.user) != undefined ? redirect("/register?err=1") :  await mongoClient.db().collection('Users').insertOne({user:`${props.searchParams.user}`,pass:`${props.searchParams.pass}`, id: `${Math.floor(Math.random()*999999)}`, name: `${props.searchParams.name}`, verified: false, phone:`${props.searchParams.phone}`, img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"})
     redirect(`/login`)
 }

@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
-export default function NavBar() {
+export default function NavBar(props) {
   const data = useSearchParams()
   const [logged, setLogged] = useState(null)
   const [menu, setMenu] = useState(false)
@@ -22,20 +22,20 @@ export default function NavBar() {
     <div className='h-16 w-full top-0 relative z-90 flex justify-between items-center px-2 shadow-lg z-10'>
       <div className='flex items-center gap-4'>
         <div className="sm:hidden">
-        <div onClick={()=>{setMenu(menu ? false : true)}} className='hover:cursor-pointer duration-300 w-12 rounded-lg text-white h-12 hover:bg-gray-200 text-center items-center justify-center flex'>
+        <div onClick={()=>{setMenu(menu ? false : true)}} className={`${props.home ? 'hidden' : 'flex'} hover:cursor-pointer duration-300 w-12 rounded-lg text-white h-12 hover:bg-gray-200 text-center items-center justify-center`}>
         <svg className='hover:rotate-[-12deg] duration-300' xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
         </div>
         </div>
         <Link href={"/"}><h1 className='text-lg font-bold hover:cursor-pointer italic'>VENDEME ESTE AUTO</h1></Link>
       </div>
-      <div className={`hover:cursor-pointer rounded-full text-white h-12 w-12 bg-gray-400 justify-center items-center ${logged ? 'flex' : 'hidden'}`}>
+      <Link href={`/profile?name=${localStorage.getItem("user") != [] ? JSON.parse(localStorage.getItem("user")).name : ''}&ver=${localStorage.getItem("user") != [] ? JSON.parse(localStorage.getItem("user")).verified : ''}`}><div className={`hover:cursor-pointer rounded-full text-white h-12 w-12 bg-gray-400 justify-center items-center ${logged ? 'flex' : 'hidden'}`}>
         <h1 className="text-xl">{logged ? JSON.parse(localStorage.getItem("user")).name[0].toUpperCase() : ''}</h1>
-      </div>
+      </div></Link>
       <div className={`${logged ? 'hidden' : 'flex'}`}>
         <Link href={"/login"}><div className="bg-gray-700 rounded-lg p-2 text-white px-4 hover:cursor-pointer">Log-In</div></Link>
       </div>
     </div>
-    <div className={`p-1 py-5 z-90 absolute bg-black shadow-lg h-screen w-56 duration-150 sm:left-0 ${menu ? 'left-0' : 'left-[-300px]'}`}>
+    <div className={`${props.home ? 'hidden' : 'block'} p-1 py-5 z-90 absolute bg-black shadow-lg h-screen w-56 duration-150 sm:left-0 ${menu ? 'left-0' : 'left-[-300px]'}`}>
       
       <Link href={`${logged ? '/first-step' : '/login'}`}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-gray-800 w-full p-2 px-3 rounded-lg duration-150">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 21q-.425 0-.712-.288T2 20v-8l2.1-6q.15-.45.538-.725T5.5 5H9v1.375q0 .15.013.313T9.05 7h-3.2L4.8 10h6.375l3.35 3.35q-.25.2-.387.5T14 14.5q0 .625.438 1.063T15.5 16q.5 0 .9-.3t.525-.775q.275.05.537.075t.538-.025q.55-.05 1.063-.275t.937-.625V20q0 .425-.288.713T19 21h-1q-.425 0-.712-.288T17 20v-1H5v1q0 .425-.288.713T4 21zm3.5-5q.625 0 1.063-.437T8 14.5q0-.625-.437-1.062T6.5 13q-.625 0-1.062.438T5 14.5q0 .625.438 1.063T6.5 16m10.05-3.45l-5.1-5.1q-.2-.2-.325-.488T11 6.376V2.5q0-.625.438-1.062T12.5 1h3.875q.3 0 .588.125t.487.325l5.1 5.1q.425.425.425 1.063t-.425 1.062l-3.875 3.875q-.425.425-1.062.425t-1.063-.425M15 6q.425 0 .713-.288T16 5q0-.425-.288-.712T15 4q-.425 0-.712.288T14 5q0 .425.288.713T15 6"/></svg>

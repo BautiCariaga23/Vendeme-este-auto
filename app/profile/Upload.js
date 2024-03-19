@@ -14,7 +14,7 @@ export default function Upload(props) {
                 <UploadButton
     endpoint="imageUploader"
     onClientUploadComplete={(res) => {
-      // Do something with the response
+      // Do something with the respon
         push(`/api/updateinfo?user=${JSON.parse(localStorage.getItem("user")).user}&img=${res[0].url}`)
     }}
     onUploadError={(err) => {

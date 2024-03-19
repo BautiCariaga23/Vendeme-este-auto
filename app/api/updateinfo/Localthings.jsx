@@ -9,4 +9,6 @@ export default function Localthings(props) {
     useEffect(()=>{
         push("/")
     },[])
+
+    return <></>
 }

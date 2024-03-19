@@ -11,7 +11,7 @@ export default function DoLogin() {
     const data = useSearchParams()
   return (
     <div className='grid place-items-center min-h-screen h-full bg-white'>
-      <NavBar></NavBar>
+      <NavBar home = {true}></NavBar>
         <div className='grid gap-y-3'>
           <h1 className='text-center text-7xl mb-12'>INGRESÁ</h1>
         <input onChange={(e)=>{setemail(e.target.value)}} placeholder='E-Mail' type='email' className='border border-black rounded-lg p-2'></input>

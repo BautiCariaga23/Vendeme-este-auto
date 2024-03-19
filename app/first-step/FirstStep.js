@@ -106,7 +106,7 @@ export default function FirstStep() {
     }}></input>
     </div>
     <button className="bg-black rounded-lg w-24 sm:w-36 p-3 text-white" onClick={()=>{
-      push(`/second-step?title=${title}&model=${model}&price=${pr}&img=${img}&desc=${desc}&usr=${JSON.parse(localStorage.getItem("user")).name}&phone=${JSON.parse(localStorage.getItem("user")).phone}&year=${year}&km=${km}&city=${city}&ver=${JSON.parse(localStorage.getItem("user")).verified}`)
+      push(`/second-step?userimg=${JSON.parse(localStorage.getItem("user")).img}&title=${title}&model=${model}&price=${pr}&img=${img}&desc=${desc}&usr=${JSON.parse(localStorage.getItem("user")).name}&phone=${JSON.parse(localStorage.getItem("user")).phone}&year=${year}&km=${km}&city=${city}&ver=${JSON.parse(localStorage.getItem("user")).verified}&mail=${JSON.parse(localStorage.getItem("user")).user}`)
     }}>ENVIAR</button>
     </div>
     </div></div>

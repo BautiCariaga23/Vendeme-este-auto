@@ -14,7 +14,7 @@ export default function NavBar(props) {
   const [maxPrice,setMax] = useState("")
   const {push} = useRouter()
   useEffect(()=>{
-    setLogged(localStorage.getItem("user") != null && localStorage.getItem("user") != [] ? true : false)
+    setLogged(localStorage.getItem("user") != undefined && localStorage.getItem("user") != [] ? true : false)
     setBr(data.get("br") != undefined ? data.get("br") : 'Todas')
   },[])
   return (
@@ -28,9 +28,8 @@ export default function NavBar(props) {
         </div>
         <Link href={"/"}><h1 className='text-lg font-bold hover:cursor-pointer italic'>VENDEME ESTE AUTO</h1></Link>
       </div>
-      <Link href={`/profile?name=${localStorage.getItem("user") != [] ? JSON.parse(localStorage.getItem("user")).name : ''}&ver=${localStorage.getItem("user") != [] ? JSON.parse(localStorage.getItem("user")).verified : ''}`}><div className={`hover:cursor-pointer rounded-full text-white h-12 w-12 bg-gray-400 justify-center items-center ${logged ? 'flex' : 'hidden'}`}>
-        <h1 className="text-xl">{logged ? JSON.parse(localStorage.getItem("user")).name[0].toUpperCase() : ''}</h1>
-      </div></Link>
+      <Link href={`/profile?name=${logged ? JSON.parse(localStorage.getItem("user")).name : ''}&ver=${logged ? JSON.parse(localStorage.getItem("user")).verified : ''}&user=${logged ? JSON.parse(localStorage.getItem("user")).user : ''}`}>
+        <img src = {logged ? JSON.parse(localStorage.getItem("user")).img: ''} className={`object-cover hover:cursor-pointer rounded-full text-white h-12 w-12 bg-gray-400 justify-center items-center ${logged ? 'flex' : 'hidden'}`}/></Link>
       <div className={`${logged ? 'hidden' : 'flex'}`}>
         <Link href={"/login"}><div className="bg-gray-700 rounded-lg p-2 text-white px-4 hover:cursor-pointer">Log-In</div></Link>
       </div>

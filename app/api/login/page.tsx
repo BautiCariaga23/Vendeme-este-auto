@@ -1,6 +1,4 @@
 import { MongoClient } from "mongodb";
-import mongoose from 'mongoose';
-import { redirect } from "next/navigation";
 import GetMyData from "./GetMyData.jsx"
 
 type Props = {

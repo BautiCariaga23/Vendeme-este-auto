@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 export default function Upload(props) {
     const [img, setImg] = useState(props.img)
     const {push} = useRouter()
-    const router = useRouter()
   return (
     <div>
         <div className='grid place-items-center gap-3'>
@@ -16,7 +15,7 @@ export default function Upload(props) {
     endpoint="imageUploader"
     onClientUploadComplete={(res) => {
       // Do something with the response
-        push(`/api/updateinfo?user=${JSON.parse(localStorage.getItem("user")).user}&img=${res[0].url}&url=${router.pathname}`)
+        push(`/api/updateinfo?user=${JSON.parse(localStorage.getItem("user")).user}&img=${res[0].url}`)
     }}
     onUploadError={(err) => {
       // Do something with the error.

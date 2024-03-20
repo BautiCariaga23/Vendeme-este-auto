@@ -38,7 +38,7 @@ export default function ProductDetail() {
             <p>{data.get("phone") != "undefined" ? data.get("phone") : '11 1234 5678'}</p>
             </div>
         </div>
-        <p className='ml-12 p-4 font-light border-gray-300 border-2 mt-4 rounded-lg flex gap-1 items-center'><img className='w-12 h-12 object-cover rounded-full mr-3' src={data.get("userimg")}/>{data.get("user")} {data.get("ver") == "true" ?  <svg className={`text-blue-300`} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z"/></svg> : ''}</p>
+        <p className='sm:ml-12 p-4 mb-3 font-light border-gray-300 border-2 mt-4 rounded-lg flex gap-1 items-center'><img className='w-12 h-12 object-cover rounded-full mr-3' src={data.get("userimg")}/>{data.get("user")} {data.get("ver") == "true" ?  <svg className={`text-blue-300`} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m8.6 22.5l-1.9-3.2l-3.6-.8l.35-3.7L1 12l2.45-2.8l-.35-3.7l3.6-.8l1.9-3.2L12 2.95l3.4-1.45l1.9 3.2l3.6.8l-.35 3.7L23 12l-2.45 2.8l.35 3.7l-3.6.8l-1.9 3.2l-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45l-4.25 4.25l-2.15-2.1L7.4 12z"/></svg> : ''}</p>
         </div>
     </div>
     </main>

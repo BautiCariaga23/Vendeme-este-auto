@@ -14,7 +14,14 @@ export default function FirstStep() {
     const [city, setCity] = useState("C.A.B.A")
     const [img, setImg] = useState()
     const {push} = useRouter()
-  
+
+    useEffect(()=>{
+      if(localStorage.getItem("user") != undefined && localStorage.getItem("user") != []){
+        return;
+      }else{
+        push("/login")
+      }
+    })
   return (
     <div>
       <NavBar></NavBar>

@@ -28,10 +28,11 @@ export default function NavBar(props) {
         </div>
         <Link href={"/"}><h1 className='text-lg font-bold hover:cursor-pointer italic'>VENDEME ESTE AUTO</h1></Link>
       </div>
-      <Link href={`/profile?name=${logged ? JSON.parse(localStorage.getItem("user")).name : ''}&ver=${logged ? JSON.parse(localStorage.getItem("user")).verified : ''}&user=${logged ? JSON.parse(localStorage.getItem("user")).user : ''}`}>
-        <img src = {logged ? JSON.parse(localStorage.getItem("user")).img: ''} className={`object-cover hover:cursor-pointer rounded-full text-white h-12 w-12 bg-gray-400 justify-center items-center ${logged ? 'flex' : 'hidden'}`}/></Link>
+      <Link href={`/profile?name=${logged ? JSON.parse(localStorage.getItem("user")).name : ''}&user=${logged ? JSON.parse(localStorage.getItem("user")).user : ''}`}>
+        <img src = {logged ? JSON.parse(localStorage.getItem("user")).img: ''} className={`object-cover hover:cursor-pointer rounded-full h-12 w-12 justify-center ${logged ? 'flex' : 'hidden'}`}/>
+        </Link>
       <div className={`${logged ? 'hidden' : 'flex'}`}>
-        <Link href={"/login"}><div className="bg-gray-700 rounded-lg p-2 text-white px-4 hover:cursor-pointer">Log-In</div></Link>
+        <Link href={"/login"}><div className="bg-slate-900 rounded-lg p-2 text-white px-4 hover:cursor-pointer">Log-In</div></Link>
       </div>
     </div>
     <div className={`${props.home ? 'hidden' : 'block'} p-1 py-5 z-90 absolute bg-black shadow-lg h-screen w-56 duration-150 sm:left-0 ${menu ? 'left-0' : 'left-[-300px]'}`}>
@@ -41,10 +42,10 @@ export default function NavBar(props) {
       <p>Vende tu auto</p>
       </div></Link>
 
-      <div className="flex items-center gap-3 mb-4 w-full p-2 px-3">
-      <svg className="text-gray-500" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="m5 13l1.5-4.5h11L19 13m-1.5 5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5s1.5.7 1.5 1.5s-.7 1.5-1.5 1.5m-11 0c-.8 0-1.5-.7-1.5-1.5S5.7 15 6.5 15s1.5.7 1.5 1.5S7.3 18 6.5 18M18.9 8c-.2-.6-.8-1-1.4-1h-11c-.7 0-1.2.4-1.4 1L3 14v8c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1h12v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-8M8 1l4 4.5L16 1Z"/></svg>
+      <Link href={"/search"}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-gray-800 w-full p-2 px-3 rounded-lg duration-150">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="m5 13l1.5-4.5h11L19 13m-1.5 5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5s1.5.7 1.5 1.5s-.7 1.5-1.5 1.5m-11 0c-.8 0-1.5-.7-1.5-1.5S5.7 15 6.5 15s1.5.7 1.5 1.5S7.3 18 6.5 18M18.9 8c-.2-.6-.8-1-1.4-1h-11c-.7 0-1.2.4-1.4 1L3 14v8c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1h12v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-8M8 1l4 4.5L16 1Z"/></svg>
       <p>Busca un auto</p>
-      </div>
+      </div></Link>
 
       <p className="mt-2 ml-2">Marca:</p>
       <select onChange={(e)=>{setBr(e.target.value);push(`/search?s=${search}&min=${minPrice}&max=${maxPrice}&br=${e.target.value}`)}} className='p-2 bg-white border-2 text-black text-sm rounded-full w-[90%] mb-6 mt-2 ml-2'>

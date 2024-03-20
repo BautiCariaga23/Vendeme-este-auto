@@ -9,15 +9,13 @@ type Props = {
 
 export default function Page(props: Props) {
   return (
-    <main className="text-black flex min-h-screen flex-col items-center p-24 px-16 bg-white">
+    <main className="text-black flex min-h-screen flex-col items-center px-4 sm:p-24 sm:px-16 bg-white">
     <div className = "relative z-90">
     <NavBar />
     </div>
-    <div className="sm:ml-48 self-start">
+    <div className="mt-24 sm:mt-0 sm:ml-48">
     <h1 className="mb-6 text-4xl font-light">Ultimos Publicados:</h1>
-    <div className = "flex justify-center w-full">
     <Cars search ={props.searchParams.s} max = {props.searchParams.max} min = {props.searchParams.min} br ={props.searchParams.br}></Cars>
-    </div>
     </div>
   </main>
   );

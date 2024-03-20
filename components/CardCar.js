@@ -3,12 +3,13 @@ import React from 'react'
 
 export default function CardCar(props) {
   return (
-    <Link className='w-min' href={`/product-detail?userimg=${props.userimg}&user=${props.user}&phone=${props.phone}&ver=${props.ver}&title=${props.title}&desc=${props.desc}&model=${props.model}&price=${props.price}&year=${props.year}&km=${props.km}&city=${props.city}&img=${props.img}`}><div className='w-72 scale-100 overflow-hidden bg-transparent border-2 border-gray-200 rounded-sm p-4 pb-0 hover:cursor-pointer hover:scale-105 hover:shadow-xl duration-300'>
+    <Link className='w-min' href={`/product-detail?userimg=${props.userimg}&user=${props.user}&phone=${props.phone}&ver=${props.ver}&title=${props.title}&desc=${props.desc}&model=${props.model}&price=${props.price}&year=${props.year}&km=${props.km}&city=${props.city}&img=${props.img}`}>
+      <div className='w-56 sm:w-72 scale-100 overflow-hidden bg-transparent border-2 border-gray-200 rounded-sm p-4 pb-0 hover:cursor-pointer hover:scale-105 hover:shadow-xl duration-300'>
         <svg className={`absolute ${props.lvl == 1 ? 'block' : 'hidden'} text-amber-700 stroke-amber-800 drop-shadow-lg -mt-8`} xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="currentColor" d="M16.486 3.143L12 5.833l-4.486-2.69A1 1 0 0 0 6 4v13a1 1 0 0 0 .486.857l5 3a1 1 0 0 0 1.028 0l5-3A1 1 0 0 0 18 17V4a1 1 0 0 0-1.514-.857"/></svg>
         <svg className={`absolute ${props.lvl == 2 ? 'block' : 'hidden'} text-gray-400 stroke-gray-600 drop-shadow-lg -mt-8`} xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="currentColor" d="M16.486 3.143L12 5.833l-4.486-2.69A1 1 0 0 0 6 4v13a1 1 0 0 0 .486.857l5 3a1 1 0 0 0 1.028 0l5-3A1 1 0 0 0 18 17V4a1 1 0 0 0-1.514-.857"/></svg>
         <svg className={`absolute ${props.lvl == 3 ? 'block' : 'hidden'} text-yellow-400 stroke-yellow-600 drop-shadow-lg -mt-8`} xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24"><path fill="currentColor" d="M16.486 3.143L12 5.833l-4.486-2.69A1 1 0 0 0 6 4v13a1 1 0 0 0 .486.857l5 3a1 1 0 0 0 1.028 0l5-3A1 1 0 0 0 18 17V4a1 1 0 0 0-1.514-.857"/></svg>
         <img src={props.img} className='bg-gray-400 h-48 rounded-sm flex self-center w-full object-cover'/>
-        <h1 className='text-2xl font-bold mt-2 scale-y-110 text-gray-600'>$ {props.price}</h1>
+        <h1 className='sm:text-2xl font-bold mt-2 scale-y-110 text-gray-600'>$ {props.price}</h1>
         <p className='text-lg font-light'>{props.title} • {props.model}</p>
         <p className='flex text-sm'>{props.year} • {props.km} km</p>
         <div className='border-t border-gray-200 flex items-center py-2 mt-4'>

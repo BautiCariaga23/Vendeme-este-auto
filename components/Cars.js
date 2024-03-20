@@ -36,7 +36,7 @@ export default async function Cars(props) {
         arrSort = arrSort.filter((a) => a.title == props.br)
     }
   return (
-    <div className='w-full flex gap-4 m-0 flex-wrap sm:justify-start'>
+    <div className='w-full gap-4 m-0 cars'>
         {arrSort.map((e,i)=>{
             return <CardCar key = {i} phone = {e.phone} title = {e.title} desc = {e.desc} model = {e.model} ver = {e.ver} price = {e.price} img = {e.img} user = {e.user} lvl = {e.lvl} userimg = {e.userimg} city = {e.city} year = {e.year} km = {e.km}/>
         })}

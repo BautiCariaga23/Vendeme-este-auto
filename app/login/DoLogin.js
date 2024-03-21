@@ -19,8 +19,8 @@ export default function DoLogin() {
         <p className={`text-red-600 ${data.get("err") == 2 ? 'block' : 'hidden'}`}>{data.get("err") == 2 ? 'Usuario o contraseña incorrectos' : ''}</p>
         <button onClick={()=>{
             push(`/api/login?user=${email}&pass=${pass}`)
-        }} className='bg-black text-white p-2 rounded-lg'>Log-In</button>
-        <p>No tienes una cuenta? <Link href={"/register"} className='text-blue-300'>Registrate!</Link></p>
+        }} className='bg-green-800 text-white p-2 rounded-lg'>Log-In</button>
+        <p>No tienes una cuenta? <Link href={"/register"} className='text-blue-500'>Registrate!</Link></p>
         </div>
     </div>
   )

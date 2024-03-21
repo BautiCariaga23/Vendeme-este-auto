@@ -13,11 +13,11 @@ export default function Home() {
       </div>
       <img src = "https://pixelz.cc/wp-content/uploads/2018/12/peugeot-508-uhd-4k-wallpaper.jpg"
        className="w-full absolute z-0 h-screen object-cover mt-16"/>
-      <div className="grid relative z-60 m-auto ml-0 sm:left-12">
+      <div className="grid relative z-60 m-auto ml-0 sm:left-12 px-4">
       <p className="top-36 sm:left-9 text-white text-5xl text-center font-black drop-shadow-[-3px_3px_2px_rgba(0,0,0,1)]">ENCONTRA TU AUTO <br></br> AL MEJOR PRECIO</p>
       <div className="flex gap-8 justify-center">
-      <Link href={"/search"}><div className="p-2 px-8 w-36 text-center bg-slate-900 text-white rounded-lg mt-6 hover:scale-105 duration-150">BUSCÁ</div></Link>
-      <Link href={"/first-step"}><div className="p-2 px-8 w-36 text-center bg-slate-900 text-white rounded-lg mt-6 hover:scale-105 duration-150">VENDÉ</div></Link>
+      <Link href={"/search"}><div className="p-2 px-8 w-36 text-center bg-green-900 text-white rounded-lg mt-6 hover:scale-105 duration-150">BUSCÁ</div></Link>
+      <Link href={"/first-step"}><div className="p-2 px-8 w-36 text-center bg-green-900 text-white rounded-lg mt-6 hover:scale-105 duration-150">VENDÉ</div></Link>
       </div>
       </div>
     </main>

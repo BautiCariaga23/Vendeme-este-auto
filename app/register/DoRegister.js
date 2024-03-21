@@ -22,16 +22,17 @@ export default function DoRegister() {
     },[email, pass, name])
   return (
     <div className='grid place-items-center min-h-screen h-full bg-white'>
-      <NavBar></NavBar>
+      <NavBar home = {true}></NavBar>
         <div className='grid gap-y-3'>
-          <h1 className='text-center text-7xl mb-12'>INGRESÁ</h1>
+          <h1 className='text-center text-4xl sm:text-7xl mb-12'>REGISTRATE</h1>
         <input onChange={(e)=>{setemail(e.target.value)}} placeholder='E-Mail' type='email' className='border border-black rounded-lg p-2'></input>
         <input onChange={(e)=>{setName(e.target.value)}} placeholder='Nombre Completo' type='text' className='border border-black rounded-lg p-2'></input>
         <input onChange={(e)=>{setPhone(e.target.value)}} placeholder='Telefono' type='text' className='border border-black rounded-lg p-2'></input>
-        <div className='flex items-center group'><input onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password' type='password' className='border border-black rounded-lg p-2 peer/pass'></input><p className={`absolute opacity-0 peer-focus/pass:opacity-50 ml-48 mb-36 w-36 bg-black p-3 text-sm text-center text-white rounded-t-lg rounded-br-lg ${pass.length>6 ? 'hidden' :'block'}`}>La contraseña debe tener al menos 6 caracteres</p></div>
+        <div className='flex items-center group'><input onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password' type='password' className='border border-black rounded-lg p-2 peer/pass'></input>
+        <p className={`absolute opacity-0 peer-focus/pass:opacity-50 ml-24 mb-36 w-36 bg-black p-3 text-sm text-center text-white rounded-t-lg rounded-br-lg ${pass.length>6 ? 'hidden' :'block'}`}>La contraseña debe tener al menos 6 caracteres</p></div>
         <p className={`text-red-600 ${data.get("err") == 1 ? 'block' : 'hidden'}`}>{data.get("err") == 1 ? 'Este e-mail ya se encuentra en uso' : ''}</p>
-        <button onClick={()=>{valid ? push(`/api/register?user=${email}&pass=${pass}&name=${name}&phone=${phone}`) : alert("Revisa las credenciales!")}} className='bg-black text-white p-2 rounded-lg'>Register</button>
-        <p>Ya tienes una cuenta? <Link href={"/login"} className='text-blue-300'>Ingresa!</Link></p>
+        <button onClick={()=>{valid ? push(`/api/register?user=${email}&pass=${pass}&name=${name}&phone=${phone}`) : alert("Revisa las credenciales!")}} className='bg-green-800 text-white p-2 rounded-lg'>Register</button>
+        <p>Ya tienes una cuenta? <Link href={"/login"} className='text-blue-500'>Ingresa!</Link></p>
        
         </div>
     </div>

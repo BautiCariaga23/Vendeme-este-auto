@@ -14,7 +14,7 @@ export default function Page(props: Props) {
     <NavBar />
     </div>
     <div className="mt-24 sm:mt-0 sm:ml-48">
-    <h1 className="mb-6 text-3xl font-semibold text-red-800">ÚLTIMAS PUBLICACIÓNES:</h1>
+    <h1 className="mb-6 text-3xl font-semibold text-black">ÚLTIMAS PUBLICACIÓNES:</h1>
     <Cars search ={props.searchParams.s} max = {props.searchParams.max} min = {props.searchParams.min} br ={props.searchParams.br}></Cars>
     </div>
   </main>

@@ -2,8 +2,6 @@ import React from 'react'
 import NavBar from "../../components/NavBar"
 import CardCar from '../../components/CardCar'
 import { MongoClient } from 'mongodb'
-import mongoose from 'mongoose'
-import { UploadButton } from '../../utils/uploadthing'
 import Upload from './Upload'
 
 type Props = {

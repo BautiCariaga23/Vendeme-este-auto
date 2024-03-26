@@ -12,7 +12,8 @@ export default function FirstStep() {
     const [year, setYear] = useState(0)
     const [km, setKm] = useState(0)
     const [city, setCity] = useState("C.A.B.A")
-    const [img, setImg] = useState()
+    const [imgs, setImgs] = useState([])
+    const [currImg, setCurrImg] = useState(0)
     const {push} = useRouter()
 
     useEffect(()=>{
@@ -29,12 +30,21 @@ export default function FirstStep() {
       <h1 className="text-3xl text-center font-extralight mb-12 mt-10">1. Crea la publicación!</h1>
     <div className="grid sm:flex items-start justify-center gap-24 sm:w-full sm:px-24">
       <div className="grid place-items-center">
-      <img src={img} className="w-56 h-56 sm:w-96 sm:h-96 object-cover mb-2"/>
+        <section className='flex justify-between'>
+        <div className='flex justify-start absolute'>
+            <div className='absolute text-white ml-16 mt-2 bg-black opacity-80 w-[70px] h-[30px] text-center rounded-xl p-4'>
+                <p className='-mt-2.5'>{imgs.length > 0 ?currImg+1 : 0} / {imgs.length}</p>
+            </div>
+            </div>
+          <button onClick={()=>{setCurrImg(currImg > 0 ? currImg-1 : 0)}} className='ml-4 p-4'>{"<"}</button>
+          <img src={imgs[currImg]} className="w-56 h-56 sm:w-96 sm:h-96 object-cover mb-2"/>
+          <button onClick={()=>{setCurrImg(currImg < imgs.length-1 ? currImg+1 : imgs.length-1)}} className='p-4'>{">"}</button>
+        </section>
       <UploadButton
     endpoint="imageUploader"
     onClientUploadComplete={(res) => {
       // Do something with the response
-      setImg(res[0].url)
+      setImgs(im => [...im,res[0].url])
     }}
     onUploadError={(err) => {
       // Do something with the error.
@@ -113,7 +123,7 @@ export default function FirstStep() {
     }}></input>
     </div>
     <button className="bg-black rounded-lg w-24 sm:w-36 p-3 text-white" onClick={()=>{
-      push(`/second-step?userimg=${JSON.parse(localStorage.getItem("user")).img}&title=${title}&model=${model}&price=${pr}&img=${img}&desc=${desc}&usr=${JSON.parse(localStorage.getItem("user")).name}&phone=${JSON.parse(localStorage.getItem("user")).phone}&year=${year}&km=${km}&city=${city}&ver=${JSON.parse(localStorage.getItem("user")).verified}&mail=${JSON.parse(localStorage.getItem("user")).user}`)
+      push(`/second-step?userimg=${JSON.parse(localStorage.getItem("user")).img}&title=${title}&model=${model}&price=${pr}&img=${imgs}&desc=${desc}&usr=${JSON.parse(localStorage.getItem("user")).name}&phone=${JSON.parse(localStorage.getItem("user")).phone}&year=${year}&km=${km}&city=${city}&ver=${JSON.parse(localStorage.getItem("user")).verified}&mail=${JSON.parse(localStorage.getItem("user")).user}`)
     }}>ENVIAR</button>
     </div>
     </div></div>

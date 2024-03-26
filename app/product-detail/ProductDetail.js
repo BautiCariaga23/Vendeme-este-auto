@@ -1,16 +1,26 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../../components/NavBar'
 import { useSearchParams } from 'next/navigation'
 
 export default function ProductDetail() {
 
     const data = useSearchParams()
+    const [currImg, setCurrImg] = useState(0)
   return (
     <main>
     <NavBar></NavBar>
     <div className='grid mt-12 sm:mt-0 place-items-center sm:flex bg-white sm:ml-48 p-12 pb-0 sm:p-24 gap-9'>
-        <img src={data.get("img")} className='h-96 w-[700px] -mt-8 object-cover'></img>
+    <section className='flex justify-center'>
+        <div className='w-full flex justify-start'>
+            <div className='absolute text-white ml-16 -mt-6 bg-black opacity-80 w-[70px] h-[30px] text-center rounded-xl p-4'>
+                <p className='-mt-2.5'>{currImg+1} / {data.get("img").split(",").length}</p>
+            </div>
+            </div>
+          <button onClick={()=>{setCurrImg(currImg > 0 ? currImg-1 : 0)}} className='ml-4 p-4 z-90 relative'>{"<"}</button>
+          <img src={data.get("img").split(",")[currImg]} className='h-96 w-[700px] -mt-8 object-cover'></img>
+          <button onClick={()=>{setCurrImg(currImg < (data.get("img").split(",")).length-1 ? currImg+1 : (data.get("img").split(",")).length-1)}} className='p-4 z-90 relative'>{">"}</button>
+        </section>
         <div className='w-full'>
         <div className='flex-col justify-start sm:ml-12 h-min py-4 mt-8 border border-gray-200 pr-16 pl-4 rounded-t-lg'>
             <h1 className='text-2xl font-bold'>{data.get("title")} · {data.get("model")}</h1>

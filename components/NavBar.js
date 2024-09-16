@@ -22,17 +22,17 @@ export default function NavBar(props) {
   },[])
   return (
     <div className="bg-transparent text-white fixed w-full left-0 top-0 z-90" style={{zIndex :99999}}>
-    <div className="absolute bg-black object-cover z-[-1] h-full w-full shadow-[0px_5px_5px_black]"></div>
+    <div className="absolute bg-[#6e0000] object-cover z-[-1] h-full w-full shadow-[0px_5px_5px_black]"></div>
     <div className='w-full top-0 relative flex justify-between items-center px-2 shadow-lg z-10'>
       <div className='flex items-center gap-4'>
         <div className="sm:hidden">
-        <div onClick={()=>{setMenu(menu ? false : true)}} className={`${props.home ? 'hidden' : 'flex'} hover:cursor-pointer duration-300 w-12 rounded-lg text-white h-12 hover:bg-green-800 text-center items-center justify-center`}>
+        <div onClick={()=>{setMenu(menu ? false : true)}} className={`${props.home ? 'hidden' : 'flex'} hover:cursor-pointer duration-300 w-12 rounded-lg text-white h-12 hover:bg-gray-800 text-center items-center justify-center`}>
         <svg className='hover:rotate-[-12deg] duration-300' xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
         </div>
         </div>
         <Link className="flex items-center gap-3" href={"/"}>
           <Image src={logo} className="w-14 h-16 -mr-2"></Image>
-          <h1 className="font-bold modakfont drop-shadow-[0_0_2px_black] text-3xl text-red-500">LogiCars<span className="text-white modakfontr">.com</span></h1>
+          <h1 className="hidden sm:block font-bold modakfont drop-shadow-[0_0_2px_black] text-3xl text-red-500">LogiCars<span className="text-white modakfontr">.com</span></h1>
        </Link>
       </div>
       <Link href={`/profile?name=${logged ? JSON.parse(localStorage.getItem("user")).name : ''}&user=${logged ? JSON.parse(localStorage.getItem("user")).user : ''}`}>
@@ -43,14 +43,14 @@ export default function NavBar(props) {
       </div>
     </div>
     <div className={`${props.home ? 'hidden' : 'block'} z-90 absolute bg-transparent shadow-lg h-screen w-56 duration-150 sm:left-0 ${menu ? 'left-0' : 'left-[-300px]'}`}>
-    <div className="absolute bg-black object-cover z-[-1] h-screen w-full shadow-[0px_5px_5px_black]"></div>
+    <div className="absolute bg-[#6e0000] object-cover z-[-1] h-screen w-full shadow-[0px_5px_5px_black]"></div>
       <div className="pt-10">
-      <Link href={`${logged ? '/first-step' : '/login'}`}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-[rgba(0,0,0,0.2)] w-full p-2 px-3 rounded-lg duration-150">
+      <Link href={`${logged ? '/first-step' : '/login'}`}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-gray-800 w-full p-2 px-3 rounded-lg duration-150">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 21q-.425 0-.712-.288T2 20v-8l2.1-6q.15-.45.538-.725T5.5 5H9v1.375q0 .15.013.313T9.05 7h-3.2L4.8 10h6.375l3.35 3.35q-.25.2-.387.5T14 14.5q0 .625.438 1.063T15.5 16q.5 0 .9-.3t.525-.775q.275.05.537.075t.538-.025q.55-.05 1.063-.275t.937-.625V20q0 .425-.288.713T19 21h-1q-.425 0-.712-.288T17 20v-1H5v1q0 .425-.288.713T4 21zm3.5-5q.625 0 1.063-.437T8 14.5q0-.625-.437-1.062T6.5 13q-.625 0-1.062.438T5 14.5q0 .625.438 1.063T6.5 16m10.05-3.45l-5.1-5.1q-.2-.2-.325-.488T11 6.376V2.5q0-.625.438-1.062T12.5 1h3.875q.3 0 .588.125t.487.325l5.1 5.1q.425.425.425 1.063t-.425 1.062l-3.875 3.875q-.425.425-1.062.425t-1.063-.425M15 6q.425 0 .713-.288T16 5q0-.425-.288-.712T15 4q-.425 0-.712.288T14 5q0 .425.288.713T15 6"/></svg>
       <p>Vende tu auto</p>
       </div></Link>
 
-      <Link href={"/search"}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-[rgba(0,0,0,0.2)] w-full p-2 px-3 rounded-lg duration-150">
+      <Link href={"/search"}><div className="flex items-center gap-3 mb-4 hover:cursor-pointer hover:bg-gray-800 w-full p-2 px-3 rounded-lg duration-150">
       <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="m5 13l1.5-4.5h11L19 13m-1.5 5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5s1.5.7 1.5 1.5s-.7 1.5-1.5 1.5m-11 0c-.8 0-1.5-.7-1.5-1.5S5.7 15 6.5 15s1.5.7 1.5 1.5S7.3 18 6.5 18M18.9 8c-.2-.6-.8-1-1.4-1h-11c-.7 0-1.2.4-1.4 1L3 14v8c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-1h12v1c0 .6.4 1 1 1h1c.6 0 1-.4 1-1v-8M8 1l4 4.5L16 1Z"/></svg>
       <p>Busca un auto</p>
       </div></Link>
@@ -93,7 +93,10 @@ export default function NavBar(props) {
         <option>Carril Dump</option>
         <option>Lanal Roads</option>
         <option>Subaru</option>
-        <option>Mitsubishi</option>            
+        <option>Mitsubishi</option>
+        <option>Torino</option>
+        <option>Seal</option>
+
       </select>
 
       <p className="mb-2 ml-2">Modelo:</p>

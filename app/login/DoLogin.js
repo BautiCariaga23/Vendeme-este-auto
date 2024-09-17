@@ -10,12 +10,12 @@ export default function DoLogin() {
     const {push} = useRouter()
     const data = useSearchParams()
   return (
-    <div className='grid place-items-center min-h-screen h-full bg-white'>
+    <div className='grid place-items-center min-h-screen h-full bg-pink-900 overflow-hidden'>
       <NavBar home = {true}></NavBar>
-        <div className='grid gap-y-3 bg-black p-12 py-24 text-white rounded-lg mt-16'>
-          <h1 className='text-center text-7xl mb-12'>INGRESÁ</h1>
-        <input onChange={(e)=>{setemail(e.target.value)}} placeholder='E-Mail' type='email' className='bg-white focus:outline-none rounded-full p-3 w-96 text-black'></input>
-        <input onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password' type='password' className='bg-white focus:outline-none rounded-full p-3 text-black'></input>
+        <div className='grid place-content-center gap-y-3 bg-red-950 shadow-[0_0_30px_black] w-80 sm:w-auto p-12 py-24 text-white rounded-lg mt-16'>
+          <h1 className='text-center text-5xl sm:text-7xl mb-12'>INGRESÁ</h1>
+        <input onChange={(e)=>{setemail(e.target.value)}} placeholder='E-Mail' type='email' className='bg-pink-950 shadow-[0_0_50px_rgba(0,0,0,0.5)] focus:outline-none rounded-full p-3 sm:w-96 text-white'></input>
+        <input onChange={(e)=>{setPassword(e.target.value)}} placeholder='Contraseña' type='password' className='bg-pink-950 shadow-[0_0_50px_rgba(0,0,0,0.5)] focus:outline-none rounded-full p-3 text-white'></input>
         <p className={`text-red-600 ${data.get("err") == 2 ? 'block' : 'hidden'}`}>{data.get("err") == 2 ? 'Usuario o contraseña incorrectos' : ''}</p>
         <button onClick={()=>{
             push(`/api/login?user=${email}&pass=${pass}`)

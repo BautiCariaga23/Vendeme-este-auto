@@ -10,12 +10,11 @@ export default function Home() {
   
 
   return (
-    <Suspense>
-    <main className="text-black flex h-screen flex-col items-center w-full">
+    <main className="text-black flex h-screen flex-col items-center w-full p-0 m-0 overflow-hidden">
       <div className = "absolute z-90">
       <NavBar home = {true} />
       </div>
-      <Image src = {BG} className="w-full absolute z-0 top-0 h-screen object-cover"/>
+      <Image src = {BG} className="w-full absolute z-0 top-0 h-full object-cover"/>
       <div className="grid relative sm:place-content-center w-full sm:w-auto z-60 m-auto ml-0 sm:left-12 scale-125 px-4">
       <Image src={CarsIMG} className="hidden sm:block absolute mt-24 ml-80 scale-[2] drop-shadow-[0_0_20px_black]"></Image>
       <p className="sm:mt-48 sm:ml-16 tracking-tight sm:left-9 text-red-600 text-[50px] sm:text-[80px] text-center font-black drop-shadow-[-3px_3px_2px_rgba(0,0,0,1)] titletext">LOGICARS <br></br><span className="titletext2 text-white relative bottom-10 sm:bottom-14">.COM</span></p>
@@ -25,6 +24,5 @@ export default function Home() {
       NUESTRO CATALOGO</div></Link>
       </div>
     </main>
-    </Suspense>
   );
 }

@@ -10,6 +10,7 @@ export default function Home() {
   
 
   return (
+    <Suspense>
     <main className="text-black flex h-screen flex-col items-center w-full p-0 m-0 overflow-hidden">
       <div className = "absolute z-90">
       <NavBar home = {true} />
@@ -24,5 +25,6 @@ export default function Home() {
       NUESTRO CATALOGO</div></Link>
       </div>
     </main>
+    </Suspense>
   );
 }
